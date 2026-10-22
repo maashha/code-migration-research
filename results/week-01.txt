@@ -1,0 +1,5 @@
+repo | stage | build | tests | class major version
+springfox-loader | jdk8 | OK | Tests run: 17, Failures: 0, Errors: 0, Skipped: 0 | major 52
+springfox-loader | jdk17 | FAIL | Tests run: 0, Failures: 0, Errors: 0, Skipped: 0 | major 52
+springfox-loader | openrewrite | FAIL | Tests run: 17, Failures: 0, Errors: 5, Skipped: 0 | major 61
+springfox-loader | junie (jdk17) | OK | Tests run: 17, Failures: 0, Errors: 0, Skipped: 0 | major 61

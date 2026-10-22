@@ -1,0 +1,2 @@
+<!-- Minimal Maven settings so pilot builds only use Maven Central (no private/user mirrors). -->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"/>
