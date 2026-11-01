@@ -1,0 +1,54 @@
+diff --git a/pom.xml b/pom.xml
+index 93d6976..61745a8 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -66,8 +66,8 @@
+     <properties>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+-        <maven.compiler.source>1.8</maven.compiler.source>
+-        <maven.compiler.target>1.8</maven.compiler.target>
++        <maven.compiler.source>17</maven.compiler.source>
++        <maven.compiler.target>17</maven.compiler.target>
+         <sonar.projectKey>dropwizard_dropwizard-elasticsearch</sonar.projectKey>
+         <sonar.organization>dropwizard</sonar.organization>
+         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+@@ -117,7 +117,7 @@
+                 <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-compiler-plugin</artifactId>
+-                    <version>3.10.1</version>
++                    <version>3.16.0</version>
+                 </plugin>
+                 <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+@@ -187,7 +187,7 @@
+                 <plugin>
+                     <groupId>org.jacoco</groupId>
+                     <artifactId>jacoco-maven-plugin</artifactId>
+-                    <version>0.8.8</version>
++                    <version>0.8.16</version>
+                 </plugin>
+                 <plugin>
+                     <groupId>org.eluder.coveralls</groupId>
+diff --git a/src/main/java/io/dropwizard/elasticsearch/managed/ManagedEsClient.java b/src/main/java/io/dropwizard/elasticsearch/managed/ManagedEsClient.java
+index a91c039..bf3551a 100644
+--- a/src/main/java/io/dropwizard/elasticsearch/managed/ManagedEsClient.java
++++ b/src/main/java/io/dropwizard/elasticsearch/managed/ManagedEsClient.java
+@@ -14,7 +14,6 @@ import java.io.File;
+ import java.net.URISyntaxException;
+ import java.net.URL;
+ import java.nio.file.Path;
+-import java.nio.file.Paths;
+ 
+ import static com.google.common.base.Preconditions.checkNotNull;
+ import static com.google.common.base.Strings.isNullOrEmpty;
+@@ -43,7 +42,7 @@ public class ManagedEsClient implements Managed {
+ 
+         final Settings.Builder settingsBuilder = Settings.builder();
+         if (!isNullOrEmpty(config.getSettingsFile())) {
+-            Path path = Paths.get(config.getSettingsFile());
++            Path path = Path.of(config.getSettingsFile());
+             if (!path.toFile().exists()) {
+                 try {
+                     final URL url = Resources.getResource(config.getSettingsFile());

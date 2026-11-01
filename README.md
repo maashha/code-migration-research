@@ -1,7 +1,7 @@
 # code-migration-research
 
 Bachelor's thesis research: evaluating the Junie coding agent on Java 8 → 17 repository migration against OpenRewrite.
-Weekly posts: [week-01.md](week-01.md).
+Weekly posts: [week-01.md](week-01.md), [week-02.md](week-02.md).
 
 ## Week 1
 
@@ -13,11 +13,16 @@ Requires Maven on `PATH` (I used 3.9.6) and `JDK8_HOME` / `JDK17_HOME`.
 ./run.sh jarlehansen/springfox-loader cdd05aff73e94bfbb7fc21f0b5fcd78c13eab5c5
 ```
 
-Junie was then run once on a clean checkout of the same repo with JDK 17 on `PATH`:
+## Week 2
+
+`run.sh` can also migrate with Junie (needs `JUNIE_API_KEY`, see https://junie.jetbrains.com/cli).
+The model is pinned to `gpt-6-luna` by default (override with `JUNIE_MODEL`); the last argument is the run number.
 
 ```sh
-junie -p work/springfox-loader --output-format=json --task="$(cat prompts/migrate-java17.md)"
+./run.sh dropwizard/dropwizard-elasticsearch 22b4e6418177f73681a73f46d961c26bf9d290ab junie 1
+./run.sh TaoZhuGongBoy/enumstatemachine c113642308637e8836b2abaf3514b3aa285800b7 junie 1
+./run.sh jarlehansen/springfox-loader cdd05aff73e94bfbb7fc21f0b5fcd78c13eab5c5 junie 2
 ```
 
-Results: `results/week-01.txt`, OpenRewrite and Junie diffs in `results/`.
-The repo and commit are from the MigrationBench dataset (`AmazonScience/migration-bench-java-selected`).
+Results: `results/week-01.txt`, `results/week-02.txt`, OpenRewrite and Junie diffs in `results/`.
+Repos and commits are from the MigrationBench dataset (`AmazonScience/migration-bench-java-selected`).

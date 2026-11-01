@@ -1,0 +1,14 @@
+Junie runs with pinned model gpt-6-luna, Junie 26.10.27 (week 1 run used Junie 26.10.20 with the default model setup)
+repo | stage | build | tests | class major version | time | cost
+dropwizard-elasticsearch | jdk8 | OK | Tests run: 32, Failures: 0, Errors: 0, Skipped: 0 | major 52
+dropwizard-elasticsearch | jdk17 | OK | Tests run: 32, Failures: 0, Errors: 0, Skipped: 0 | major 52
+dropwizard-elasticsearch | junie-1 | OK | Tests run: 32, Failures: 0, Errors: 0, Skipped: 0 | major 61 | 40 s | $0.010
+enumstatemachine | jdk8 | OK | Tests run: 5, Failures: 0, Errors: 0, Skipped: 0 | major 52
+enumstatemachine | jdk17 | OK | Tests run: 5, Failures: 0, Errors: 0, Skipped: 0 | major 52
+enumstatemachine | junie-1 | OK | Tests run: 5, Failures: 0, Errors: 0, Skipped: 0 | major 61 | 160 s | $0.036
+springfox-loader | jdk8 | OK | Tests run: 17, Failures: 0, Errors: 0, Skipped: 0 | major 52
+springfox-loader | jdk17 | FAIL | Tests run: 0, Failures: 0, Errors: 0, Skipped: 0 | major 52
+springfox-loader | junie-2 | OK | Tests run: 17, Failures: 0, Errors: 0, Skipped: 0 | major 61 | 132 s | $0.041
+OpenRewrite (same script, re-run this week)
+dropwizard-elasticsearch | openrewrite | OK | Tests run: 32, Failures: 0, Errors: 0, Skipped: 0 | major 61 | 11 s
+enumstatemachine | openrewrite | FAIL | Tests run: 5, Failures: 0, Errors: 5, Skipped: 0 | major 61 | 9 s

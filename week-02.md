@@ -1,0 +1,3 @@
+# Week 2 — Java 8 → 17 migration
+
+This week I extended my script to run Junie the same way as OpenRewrite. I also pinned Junie's model, because its default model had changed since last week. I also fixed a flaw in the check: a failed Junie run had been reported as a passing build. I then ran Junie on three small MigrationBench repositories. Junie migrated all three (all tests passed, classes compiled for Java 17, $0.01–0.04 per run), while OpenRewrite migrated one; on the other two it failed because it does not upgrade old Spring versions. A repeated Junie run on springfox-loader produced almost the same changes as last week. Next, I plan to check that tests are not lost during migration and to use more repositories.

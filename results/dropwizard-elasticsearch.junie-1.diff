@@ -1,0 +1,14 @@
+diff --git a/pom.xml b/pom.xml
+index 93d6976..a10a3f4 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -66,8 +66,7 @@
+     <properties>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+-        <maven.compiler.source>1.8</maven.compiler.source>
+-        <maven.compiler.target>1.8</maven.compiler.target>
++        <maven.compiler.release>17</maven.compiler.release>
+         <sonar.projectKey>dropwizard_dropwizard-elasticsearch</sonar.projectKey>
+         <sonar.organization>dropwizard</sonar.organization>
+         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
